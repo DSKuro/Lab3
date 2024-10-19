@@ -6,8 +6,9 @@ class Budget:
     total_income = 0.0
     total_expences = 0.0
 
-    def __init__(self, start_budget : float, budget : float, transactions : list) -> None:
-        self.budget = budget
+    def __init__(self, start_budget : float, transactions : list) -> None:
+        self.budget = 0.0
+        self.debt = False
         self.start_budget = start_budget
         self.transactions = transactions
 
@@ -28,6 +29,8 @@ class Budget:
         self.calculate_income()
         self.calculate_expences()
         self.budget = (self.total_income + self.start_budget) - self.total_expences
+        if self.budget < 0:
+            self.debt = True
 
     @property
     def get_total_income(self) -> float:
@@ -42,7 +45,10 @@ class Budget:
         return self.budget
 
     def __str__(self):
-        return (f'Стартовый бюджет: {self.start_budget},'
-                f'Общий доход: {self.total_income},'
-                f'Общие расходы: {self.total_expences},'
-                f'Конечный бюджет: {self.budget}')
+        if not self.debt:
+            return (f'Start budget: {self.start_budget},'
+                f'Common income: {self.total_income},'
+                f'Common expences: {self.total_expences},'
+                f'Result budget: {self.budget}')
+        else:
+            return f'Debts!'
