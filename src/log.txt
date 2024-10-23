@@ -1,3 +1,1 @@
-Start budget: 50.0,Common income: 20.0,Common expences: 0.0,Result budget: 70.0
-Start budget: 300.0,Common income: 220.0,Common expences: 0.0,Result budget: 520.0
-Start budget: 300.0,Common income: 720.0,Common expences: 0.0,Result budget: 1020.0
+Start budget: 500.0,Common income: 1200.0,Common expences: 0.0,Result budget: 1700.0
